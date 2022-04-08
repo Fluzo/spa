@@ -1,0 +1,48 @@
+<h1>Buscando: <small> {{ termino }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info">
+            No exiten resultados con el término: {{ termino }}
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<div class="card-columns row">
+
+
+    <div class="col-4" *ngFor="let heroe of heroes">
+
+        <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx"></app-heroe-tarjeta>
+    </div>
+    <!-- *ngFor="let heroe of heroes; let i=index" -->
+</div>
+
+
+
+
+<!-- <div class="card-columns row">
+
+
+    <div class="card animated fadeIn fast col-md-4 col-sm-12" *ngFor="let heroe of heroes; let i=index">
+        <img src="{{heroe.img}}" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h4 class="card-title">{{ heroe.nombre }}</h4>
+            <p class="card-text">{{ heroe.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
+
+            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block"></button>
+            <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver más link...</a>
+
+        </div>
+    </div>
+
+</div> -->
